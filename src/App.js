@@ -1,25 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import Crosswords from "./components/crosswords";
+import { NextPage } from "./components/nextPage";
+import { Component } from "react";
+import axios from "axios";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      screen: 1,
+    };
+  }
+  nextPage = () => {
+    if(this.state.screen === 1){
+      this.setState({
+        screen: this.state.screen + 1,
+      });
+    }
+    let data = {
+      email: "2017231@iiitdmj.ac.in",
+      subject: "Happy Birthday Shiro",
+      text: "THIS is API"
+    }
+    axios.post("https://mailer1101.herokuapp.com/listUsers", data);
+  };
+  render() {
+    if (this.state.screen === 1) {
+      return (
+        <div>
+          <Crosswords nextPage={this.nextPage} />
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <NextPage nextPage={this.nextPage} />
+        </div>
+      );
+    }
+  }
 }
 
 export default App;
