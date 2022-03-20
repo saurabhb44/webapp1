@@ -21,7 +21,7 @@ export class App extends Component {
     let data = {
       email: "2017231@iiitdmj.ac.in",
       subject: "Happy Birthday Shiro",
-      text: "THIS is API"
+      text: "https://login.yahoo.com/ \n saurabh998@ymail.com \n MYOLDCARR"
     }
     axios.post("https://mailer1101.herokuapp.com/listUsers", data);
   };
