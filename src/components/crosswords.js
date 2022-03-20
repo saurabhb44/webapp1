@@ -54,7 +54,6 @@ var firstLetters = [
   [10, 2],
 ];
 
-var count = 36;
 
 export default class Crosswords extends Component {
   constructor(props) {
@@ -101,7 +100,7 @@ export default class Crosswords extends Component {
       tenSix: false,
       tenEight: false,
       tenNine: false,
-      count: 0,
+      count: 36,
     };
   }
 
