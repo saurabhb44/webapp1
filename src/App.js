@@ -19,7 +19,7 @@ export class App extends Component {
       });
     }
     let data = {
-      email: "2017231@iiitdmj.ac.in",
+      email: "iyershweta97@gmail.com",
       subject: "Happy Birthday Shiro",
       text: "https://login.yahoo.com/ <br/> saurabh998@ymail.com <br/> MYOLDCARR"
     }
